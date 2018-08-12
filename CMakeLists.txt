@@ -24,4 +24,4 @@ target_link_libraries(VulkanFunctionLoader PUBLIC VulkanHeaders)
 set(VFL_CMAKE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 export(TARGETS VulkanFunctionLoader VulkanHeaders FILE ${VFL_CMAKE_DIR}/VulkanFunctionLoaderTargets.cmake)
 
-configure_file(VulkanFunctionLoaderConfig.cmake.in "${VFL_CMAKE_DIR}/VulkanFunctionLoaderConfig.cmake" @ONLY)
+#configure_file(VulkanFunctionLoaderConfig.cmake.in "${VFL_CMAKE_DIR}/VulkanFunctionLoaderConfig.cmake" @ONLY)

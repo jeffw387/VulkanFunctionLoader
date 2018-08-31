@@ -4,9 +4,9 @@ project(VulkanFunctionLoaderProject LANGUAGES CXX)
 
 add_library(VulkanFunctionLoader "src/VulkanFunctions.cpp")
 target_include_directories(VulkanFunctionLoader PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
-target_compile_definitions(VulkanFunctionLoader PRIVATE VK_NO_PROTOTYPES)
+target_compile_definitions(VulkanFunctionLoader PUBLIC VK_NO_PROTOTYPES)
 if(WIN32)
-target_compile_definitions(VulkanFunctionLoader PRIVATE VK_USE_PLATFORM_WIN32_KHR)
+target_compile_definitions(VulkanFunctionLoader PUBLIC VK_USE_PLATFORM_WIN32_KHR)
 endif(WIN32)
 
 find_package(Vulkan REQUIRED)

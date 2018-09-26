@@ -11,14 +11,14 @@ endif(WIN32)
 
 find_package(Vulkan REQUIRED)
 
-if(Vulkan_FOUND)
-  message(STATUS ${Vulkan_LIBRARY})
-else(Vulkan_FOUND)
-  message("Vulkan was not found.")
-endif(Vulkan_FOUND)
+#if(Vulkan_FOUND)
+#  message(STATUS ${Vulkan_LIBRARY})
+#else(Vulkan_FOUND)
+#  message("Vulkan was not found.")
+#endif(Vulkan_FOUND)
 
 add_library(VulkanHeaders INTERFACE)
-target_include_directories(VulkanHeaders INTERFACE ${Vulkan_INCLUDE_DIRS})
+target_include_directories(VulkanHeaders INTERFACE "$ENV{VULKAN_SDK}/include")
 target_link_libraries(VulkanFunctionLoader PUBLIC VulkanHeaders)
 
 set(VFL_CMAKE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
